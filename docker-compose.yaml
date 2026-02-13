@@ -1,3 +1,5 @@
+version: "3.7"
+
 services:
   traefik:
     image: traefik:latest
@@ -22,10 +24,10 @@ services:
     restart: unless-stopped
 
   n8n:
-   build:
-    context: .
-    dockerfile: Dockerfile
-    image: n8n-custom-ffmpeg:latest
+    # THE CRITICAL CHANGE: Build from the current repo directory
+    build: 
+      context: .
+      dockerfile: Dockerfile
     container_name: n8n
     environment:
       - N8N_HOST=n8n.srv1188761.hstgr.cloud
