@@ -1,0 +1,6 @@
+n8n:
+  build:
+    context: .
+    dockerfile: Dockerfile
+  image: n8n-custom-ffmpeg:latest
+  # ... rest of your config
